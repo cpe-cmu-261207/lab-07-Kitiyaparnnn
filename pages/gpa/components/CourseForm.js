@@ -3,6 +3,7 @@ import { CREDITS } from "../utils/credits";
 import { useContext, useState, useReducer } from "react";
 import {eieiContext } from "../index";
 
+
 const CourseForm = () => {
   const initInputData = { name: '', code: '', creditt: ' ', gradee: '0.00' }
   const Context = useContext(eieiContext)
@@ -38,7 +39,7 @@ const CourseForm = () => {
     <form>
       <div className="row">
         <div className="col">
-          <label for="name">Name</label> <br />
+          <label className="text-label" for="name">Name</label> <br />
           <input className="inputBotton" id="name" type="text"
             value={state.name}
             onChange={(e) => {
@@ -48,7 +49,7 @@ const CourseForm = () => {
           />
         </div>
         <div className="col">
-          <label for="code">Code</label><br />
+          <label className="text-label" for="code">Code</label><br />
           <input className="inputBotton" id="code" type="text"
             value={state.code}
             onChange={(e) => {
@@ -58,7 +59,7 @@ const CourseForm = () => {
           />
         </div>
         <div className="col">
-          <label>Credit</label><br />
+          <label className="text-label">Credit</label><br />
           <select name="credit" className="inputBotton"
             value={state.creditt}
             onChange={(e) => {
@@ -70,7 +71,7 @@ const CourseForm = () => {
           </select>
         </div>
         <div className="col">
-          <label>Grade</label><br />
+          <label className="text-label">Grade</label><br />
           <select name="grade" className="inputBotton"
             onChange={(e) => {
               dispatch({type: 'setGrade',value:e.target.value})
@@ -81,7 +82,8 @@ const CourseForm = () => {
           </select>
         </div>
         <div className="col" onClick={() => Context.addCourse(state)}>
-          <span className="text-buttom text-success fs-2"><i class="fas fa-plus-circle"></i></span>
+          {/* <span className="text-buttom text-success fs-2"><i class="fas fa-plus-circle"></i></span> */}
+            <button className="button-gpa" style={{color:" #04ff0c"}}>add</button>
         </div>
       </div>
     </form>

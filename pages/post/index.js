@@ -12,30 +12,36 @@ const Posts = () => {
         // console.log(' ;-; ');
         axios.get(`${baseURL}/post`, { headers: { "app-id": fakeapi } })
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setPosts(res.data.data)
             })
     }, [])
 
     return (
         <>
-            <h1>All Posts</h1>
-            <div className=''>
-                {posts.map((post) => {
-                    return (
-                        <div key={post.id}>
+            <div className="background-post">
+                <h1 className="title">All Posts</h1>
+                <Link href={'./'}>
+                    <button className="button-post">Go back</button>
+                </Link>
+                <div className='manu background-post'>
+                    {posts.map((post) => {
+                        return (
+                            <div key={post.id} className="card">
 
-                            <p>Post :{post.text}</p>
-                            <img src={post.image}></img>
-                            <p>Like : {post.likes}</p>
+                                <h3 className="description">{post.text}</h3>
+                                <img src={post.image}></img>
+                                <br />
+                                <p>Like : {post.likes}</p>
+                                <br />
+                                <Link href={'./post/' + post.id}>
+                                    <button className="button-post">Go to this post</button>
+                                </Link>
 
-                            <Link href={'./post/' + post.id}>
-                                <button>Go to this post</button>
-                            </Link>
-
-                        </div>
-                    )
-                })}
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
 
         </>

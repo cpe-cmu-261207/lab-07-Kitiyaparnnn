@@ -1,10 +1,11 @@
 import { createContext, useReducer, useState, useEffect } from "react";
 import CourseCard from "./components/CourseCard.js";
 import CourseForm from "./components/CourseForm";
+import Link from 'next/link'
 
 export const eieiContext = createContext()
 
-const GPA = () =>{
+const GPA = () => {
 
   const [myCourses, setMyCourse] = useState([]);
 
@@ -69,28 +70,33 @@ const GPA = () =>{
 
   return (
     <eieiContext.Provider value={{ addCourse }}>
-      <div className="container mx-center h-screen">
-        <div className="temp badge bg-warning text-wrap">
-          <h1>
-            GPA CALCULATOR
-        </h1>
-        </div>
-
-        {/* TODO ADD UI */}
-        <div className="space-x-4 mine">
-          <div>
-            <ul className="list-group my-4">
-              <h2 className="temp text-2xl my-3">My courses</h2>
-              {renderCourseCard()}
-            </ul>
-
-          </div>
-          <div className="grade">
-            <h2 className="temp">GPA : {calculateGPA().toFixed(2)}</h2>
-          </div>
-        </div>
+      <div style={{ backgroundColor: "#4CAF50" }}>
         <div className="container mx-center h-screen">
-          <CourseForm />
+          <div className="temp2 badge text-wrap" style={{ backgroundColor: "white" }}>
+            <h1>
+              GPA CALCULATOR
+            </h1>
+          </div>
+          <Link href={'./'}>
+            <button className="button-post" style={{backgroundColor:"#4CAF50"}}>Go back</button>
+          </Link>
+
+          {/* TODO ADD UI */}
+          <div className="space-x-4 mine">
+            <div>
+              <ul className="list-group my-4">
+                <h2 className="temp text-2xl my-3">My courses</h2>
+                {renderCourseCard()}
+              </ul>
+
+            </div>
+            <div className="grade">
+              <h2 className="temp">GPA : {calculateGPA().toFixed(2)}</h2>
+            </div>
+          </div>
+          <div className="">
+            <CourseForm />
+          </div>
         </div>
       </div>
     </eieiContext.Provider>

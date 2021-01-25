@@ -3,12 +3,15 @@ import Link from 'next/link'
 const Port = () => {
     return (
         <>
-            <div className="manu">
-                <Link href={`/port`}><h1>Home</h1></Link>
-                <Link href={`/port/gallery`}><h1>Gallery</h1></Link>
-                <Link href={`/port/contect`}><h1>Contact</h1></Link>
-             
+        <div className="background">
+            <div className="manu manu-bar">
+                <Link href={`/port`}><h3>Home</h3></Link>
+                <Link href={`/port/gallery`}><h3>Gallery</h3></Link>
+                <Link href={`/port/contect`}><h3>Contact</h3></Link>
             </div>
+            <Link href={'./'}>
+            <button className="button-post button-postid" style={{backgroundColor:"#f44336"}}>Go back</button>
+          </Link>
             <br />
             <div className="profile1">
                 <div className="">
@@ -17,21 +20,21 @@ const Port = () => {
                     <h5 >Faculty of Computer Engineering</h5>
                     <h5 >Telephone : 095-687xxxx</h5>
                 </div>
-                <img src="แมว.jpg" />
+                <a href="https://www.facebook.com/parn.takhum/" ><img src="แมว.jpg" class="rounded" /></a> 
             </div>
             <br />
             <div>
                 <table className="table">
                     <tr>
                         <td>
-                            <h1>Profile</h1>
+                            <h3 className="text-header">Profile</h3>
                         </td>
-                        <td><p>Keep practicing and improving yourself. In order to keep up with the technology that keeps advancing</p></td>
+                        <td className="table-position"><p>Keep practicing and improving yourself. In order to keep up with the technology that keeps advancing</p></td>
                     </tr>
 
                     <tr>
                         <td>
-                            <h1>Skills</h1>
+                            <h3 className="text-header">Skills</h3>
                         </td>
                         <td>
                             <tr><p>Baby Developer</p></tr>
@@ -41,9 +44,9 @@ const Port = () => {
 
                     <tr>
                         <td>
-                            <h1>Technical</h1>
+                            <h3 className="text-header">Technical</h3>
                         </td>
-                        <td>
+                        <td className="table-position">
                             <li>C++</li>
                             <li>Java</li>
                         </td>
@@ -51,19 +54,21 @@ const Port = () => {
 
                     <tr>
                         <td>
-                            <h1>Education</h1>
+                            <h3 className="text-header">Education</h3>
                         </td>
-                        <td>
+                        <td className="table-position">
                             <tr>
-                                <h1>High school : Yupparaj Wittayalai School - Chiang Mai</h1>
+                                <p>High school : Yupparaj Wittayalai School - Chiang Mai</p>
                             </tr>
                             <tr>
-                                <h1>Master : Chiang Mai University - Chiang Mai</h1>
+                                <p>Master : Chiang Mai University - Chiang Mai</p>
                             </tr>
                         </td>
                     </tr>
                 </table>
             </div>
+        </div>
+            
         </>
     )
 }
