@@ -5,7 +5,9 @@ const PostObject = (props) => {
         <div>
 
         <p>Post :{props.text}</p>
+        <p>Tags :{props.tags} </p>
         <img src={props.image}></img>
+        <p>Post by :{props.owner.firstName} {props.owner.lastName}</p>
         <p>Like : {props.likes}</p>
 
         <Link href={'./'}>

@@ -30,7 +30,7 @@ const Posts = () => {
                             <p>Like : {post.likes}</p>
 
                             <Link href={'./post/' + post.id}>
-                                <button>Go go ...</button>
+                                <button>Go to this post</button>
                             </Link>
 
                         </div>

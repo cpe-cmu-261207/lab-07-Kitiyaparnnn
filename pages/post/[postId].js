@@ -32,7 +32,7 @@ const Post = () => {
 
     return (
         <>
-            <h1>display post data from api here</h1>
+            {/* <h1>display post data from api here</h1> */}
             <div>
                 <PostObject {...post}/>
             </div>
